@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --v1: calc(max(9vw, 11vh));
+}
+
+body {
+  background: #1d0027;
+  overflow: hidden;
+  min-height: 200vh;
+}
+
+.container {
+  position: fixed;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.row {
+  display: inline-flex;
+  margin-top: calc(var(--v1) * -0.32);
+  margin-left: calc(var(--v1) * -0.5);
+}
+
+button.hexagon {
+  border: none;
+  cursor: pointer;
+}
+
+.hexagon {
+  position: relative;
+  width: calc(var(--v1));
+  height: calc(var(--v1) * 1.1);
+  margin: calc(var(--v1) * 0.04) calc(var(--v1) * 0.02);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background: linear-gradient(90deg, rgba(25, 25, 25, 0.7) 50%, rgba(10, 10, 10, 0.85) 50%);
+  background: #2c093a;
+  text-align: center;
+  color: rgba(15, 15, 15, 1);
+  line-height: calc(var(--v1) * 1.1);
+  font-size: 2vw;
+  transition: 1s;
+  z-index: 1; /* Ensure hexagons are above the cursor */
+}
+
+.blank {
+  background: transparent;
+}
+
+button.hexagon {
+  background: #2c093aa9;
+}
+
+button.hexagon:hover {
+  color: rgba(25, 25, 25, 1);
+  background: #2c093a;
+}
+
+.row:nth-child(even) {
+  margin-left: calc(var(--v1) * 0.02);
+}
+
+.cursor {
+  position: absolute;
+  width: calc(var(--v1) * 2.5);
+  height: calc(var(--v1) * 2.5);
+  border-radius: 50%;
+  animation: anim 2s linear infinite;
+  visibility: hidden;
+  transform: translate(-50%, -50%);
+  z-index: 0; /* Ensure the cursor is below the hexagons */
+}
+
+@keyframes anim {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+body:hover .cursor {
+  background-color: radial-gradient(circle, rgba(0, 255, 0, 1) 0%, rgba(0, 255, 0, 0) 70%);
+  visibility: visible;
+}
