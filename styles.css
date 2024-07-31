@@ -6,7 +6,7 @@
 }
 
 body {
-  background: #1d0027;
+  background: #FFFFFF;
   overflow: hidden;
   min-height: 200vh;
 }
@@ -35,7 +35,7 @@ button.hexagon {
   margin: calc(var(--v1) * 0.04) calc(var(--v1) * 0.02);
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   background: linear-gradient(90deg, rgba(25, 25, 25, 0.7) 50%, rgba(10, 10, 10, 0.85) 50%);
-  background: #2c093a;
+  background: #FFFFFF;
   text-align: center;
   color: rgba(15, 15, 15, 1);
   line-height: calc(var(--v1) * 1.1);
